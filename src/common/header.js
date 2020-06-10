@@ -9,10 +9,15 @@ const header = () => {
         <Link to="/landingpage">
           <h3>Home</h3>
         </Link>
-
-        <h3 href="#">My Account</h3>
-        <h3 href="#">Pokedex</h3>
-        <h3 href="#">Help</h3>
+        <Link to="#">
+          <h3>My Account</h3>
+        </Link>
+        <Link to="/pokedex">
+          <h3>Pokedex</h3>
+        </Link>
+        <Link to="#">
+          <h3>Help</h3>
+        </Link>
       </nav>
     </div>
   );
