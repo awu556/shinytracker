@@ -1,11 +1,12 @@
 import React from "react";
+import "../styles/header.css";
 import { Link } from "react-router-dom";
 
 const header = () => {
   return (
-    <div>
+    <div className="header-div">
       <h1>ShinyTracker</h1>
-      <nav>
+      <nav className="nav-links">
         <Link to="/landingpage">
           <h3>Home</h3>
         </Link>

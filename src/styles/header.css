@@ -1,0 +1,16 @@
+.header-div {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  text-decoration: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
