@@ -6,12 +6,14 @@ let db = new sqlite3.Database("./pkgo.db", sqlite3.OPEN_READWRITE, (err) => {
   }
   console.log("Connected to the pkgo database.");
 
-  db.serialize(() => {
-    db.each(`SELECT pokemon FROM ref_pkdex WHERE generation=1;`, (err, row) => {
-      if (err) {
-        console.error(err.message);
-      }
-      console.log(row.id + "\t" + row.name);
+  let sql = `SELECT pokemon FROM ref_pkdex WHERE generation=1;`;
+
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      throw err;
+    }
+    rows.forEach((row) => {
+      console.log(row);
     });
   });
 
