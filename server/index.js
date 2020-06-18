@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 
 // const db = require("./db/db.js");
 const app = express();
@@ -30,7 +31,7 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).send(err.message || "Internal server error.");
 });
 
-app.get("/api/pokemon", (req, res, next) => {
+app.get("/api/pokemon", cors(), (req, res, next) => {
   let sql = `SELECT pokemon FROM ref_pkdex WHERE generation=1;`;
   // let sql = `SELECT * FROM shiny WHERE lower(pokemon) IN (select lower(pokemon) FROM ref_pkdex where generation=1) AND user='purplecow#6485';`;
 
